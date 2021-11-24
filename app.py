@@ -11,6 +11,7 @@ api = Api(app)
 class Hand(Resource):
     def post(self):
         request_data = request.get_json()
+        request_data.headers.add('Access-Control-Allow-Origin', '*')
         return request_data
 
 
