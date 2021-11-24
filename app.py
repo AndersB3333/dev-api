@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, jsonify
 from flask_restful import Resource, Api
+
 import numpy as np
 import pandas as pd
 import random as random
@@ -10,10 +11,8 @@ api = Api(app)
 class Hand(Resource):
     def post(self):
         request_data = request.get_json()
-        request_data.headers.add('Access-Control-Allow-Origin', '*')
-        request_data.headers.add('Access-Control-Allow-Methoods', 'POST')
-        request_data.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
         return request_data
+
 
 api.add_resource(Hand, '/')
 
