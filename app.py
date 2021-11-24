@@ -12,6 +12,8 @@ class Hand(Resource):
     def post(self):
         request_data = request.get_json()
         request_data.headers.add('Access-Control-Allow-Origin', '*')
+        request_data.headers.add('Access-Control-Allow-Methods', '*')
+        request_data.headers.add('Access-Control-Allow-Headers', '*')
         return request_data
 
 
