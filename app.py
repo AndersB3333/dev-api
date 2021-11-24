@@ -10,6 +10,9 @@ api = Api(app)
 class Hand(Resource):
     def post(self):
         request_data = request.get_json()
+        request_data.headers.add('Access-Control-Allow-Origin', '*')
+        request_data.headers.add('Access-Control-Allow-Methoods', 'POST')
+        request_data.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
         return request_data
 
 api.add_resource(Hand, '/')
